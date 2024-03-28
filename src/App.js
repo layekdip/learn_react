@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {CORE_CONCEPTS} from './data.js';
+import Header from './components/Header.js'
+import CoreConcepts from './components/CoreConcepts.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <main>
+        <section id="core-concepts">
+            <h2>Core Concepts</h2>
+            <ul>
+                <CoreConcepts
+                    title={CORE_CONCEPTS[0].title}
+                    description={CORE_CONCEPTS[0].description}
+                    image={CORE_CONCEPTS[0].image}
+                />
+                <CoreConcepts {...CORE_CONCEPTS[1]} />
+                <CoreConcepts {...CORE_CONCEPTS[2]} />
+                <CoreConcepts {...CORE_CONCEPTS[3]} />
+            </ul>
+        </section>
+        <h2>Time to get started!</h2>
+      </main>
     </div>
   );
 }
